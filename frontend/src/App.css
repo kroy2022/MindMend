@@ -1,42 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.landing-container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #454545;
+  color: #F3F0e8;
+}
+
+.start-content{
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  margin-top: 10vh;
+  align-items: center;
+  
+}
+
+.content{
+  display: flex;
+  flex-direction: flex;
+  height: 80vh;
+}
+
+.start-headers{
+  justify-content: center;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-left: 5vw;
+  margin-bottom: 10vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.highlight{
+  background: #8DBEF8;
+  -webkit-background-clip: text; 
+  color: transparent; 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.start-header{
+  width: 30vw;
+  font-size: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.start-p{
+  font-size: 25px;
 }
 
-.card {
-  padding: 2em;
+.start-svg{
+  margin-left: 20vw;
 }
 
-.read-the-docs {
-  color: #888;
+.startpage-svg{
+  width: 30vw;
+  margin-top: 10vh;
+}
+
+.land-login-btn{
+  width: 10vw;
+  justify-content: center;
 }

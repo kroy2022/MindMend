@@ -12,7 +12,7 @@ csrf = CSRFProtect(app)
 def get_twitter_info():
     try:
         link = request.form.get("link")
-        
+
         print(link)
         return jsonify({
             "status": "Valid",
@@ -24,3 +24,10 @@ def get_twitter_info():
             "status": "Invalid",
             "error": str(e)
         })
+    
+@app.route('/twitter/info', methods=["POST"])
+@csrf.exempt
+def get_resources():
+    return jsonify({
+        "temp"
+    })

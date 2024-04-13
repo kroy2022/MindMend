@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx'
 import './index.css'
+import {NextUIProvider} from "@nextui-org/react";
+import Login from './Login.jsx'
+import Twitter from './Twitter.jsx';
+import TwitterPopUp from './components/TwitterPopup.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Suspense> <App/> </Suspense>} />
+        <Route path="/Login" element={<Suspense> <Login/> </Suspense>} />
+        <Route path="/Twitter" element={<Suspense> <Twitter/> </Suspense>} />
+        <Route path="/TwitterPopup" element={<Suspense> <TwitterPopUp/> </Suspense>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
-)
+);
