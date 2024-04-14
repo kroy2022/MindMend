@@ -11,17 +11,6 @@ function App() {
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fd = new FormData();
-    fd.append("link", "test");
-    axios.post('http://127.0.0.1:5000/twitter/info', fd, {
-      headers: {
-          'Content-Type': 'multipart/form-data',
-      }
-    })
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-  }, [])
 
   const handleLoginNavigation = () => {
     navigate("/Login", {state: null});
