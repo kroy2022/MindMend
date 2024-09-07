@@ -4,17 +4,19 @@ import { DarkTheme, DefaultTheme, ThemeProvider, NavigationContainer } from '@re
 import { useColorScheme } from '@/hooks/useColorScheme';
 import HomeScreen from './index'; 
 import CreateRoute from './CreateRoute';
-const Stack = createNativeStackNavigator();
+import { RootStackParamList } from '../types';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <NavigationContainer independent={true}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="CreateRoute" component={CreateRoute} />
         </Stack.Navigator>
-      </ThemeProvider>
+      </NavigationContainer>
   );
 }

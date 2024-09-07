@@ -1,17 +1,19 @@
 import { HelloWave } from '@/components/HelloWave';
 import { View, StyleSheet, Text, TouchableOpacity, Dimensions  } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../types';
 const {width} = Dimensions.get('window');
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
       <Text style={styles.description}>Your path to safety <HelloWave /></Text>
-      <Text style={styles.header}>Stay secure on every journey - start now</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CreateRoute')}>
+      <Text style={styles.header}>Stay secure on every journey - try now</Text>
+      <TouchableOpacity style={styles.button} onPress={() => 
+        navigation.navigate('CreateRoute')
+      }>
         <Text style={styles.buttonText}>Find a route!</Text>
       </TouchableOpacity>
     </View>
@@ -19,6 +21,13 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  mapcontainer: {
+    flex: 1,
+  },
+  map: {
+    width: '100%',
+    height: '100%',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
